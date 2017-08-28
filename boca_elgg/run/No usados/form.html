@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<title>
+			<p>Form Test</p>
+		</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function Arquivo() {
+			selecionando = 1;
+			}
+		</script>
+		<script type="text/javascript">\n.
+	        function conf() {
+	      		if (document.form1.problem.value != '-1' && document.form1.language.value != '-1') {
+	       			if (confirm("Confirm submission?")){
+	        			document.form1.confirmation.value='confirm';
+	       			}
+	      		} else {
+	        		alert('Invalid problem and/or language');
+	      		}
+	    	}
+	   </script>
+		<form name="form1" enctype="multipart/form-data" method="post" action="../boca/team/run.php">
+			<input type="hidden" name="confirmation" value="confirm">
+			<center>
+				<table border="0">
+					<tr>
+						<td width="25%" align="right">
+							Problem:
+						</td>
+						<td width="75%">
+						<select name="problem" onclick="Arquivo()">
+							<option selected value="-1">--</option>
+							<option value="1">m</option>
+						</select>
+						</td>
+					</tr>
+					<tr>
+						<td width="25%" align="right">Language:</td>
+						<td width="75%">
+							<select name="language" onclick="Arquivo()">
+								<option selected value="-1">--</option>
+								<option value="1">C</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+	        			<td width="25%" align=right>Source code:</td>
+	        			<td width="75%">
+		  					<input type="file" name="sourcefile" size="40" onclick="Arquivo()">
+	        			</td>
+	      			</tr>
+				</table>
+			</center>
+			<center>
+	      		<input type="submit" name="Submit" value="Send" onclick="conf()">
+	      		<input type="reset" name="Submit2" value="Clear">
+	  		</center>
+		</form>
+	</body>
+</html>
+	
